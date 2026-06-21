@@ -27,12 +27,11 @@ This project is built with a focus on maintainability, scalability, and clean co
 - `config/`: Contains the `config.json` for environment and test parameters.
 - `pages/`: Page Object Model implementation (BasePage, SearchPage, ItemPage, CartPage).
 - `tests/`: Contains the main E2E test suite.
-- `utils/`: Helper functions for parsing and automation tasks.
 
 ## Prerequisites
 Ensure you have **Python 3.9+** installed.
 
-Install the required dependencies:
+- Install the required dependencies:
 
 `pip install -r requirements.txt`
 
