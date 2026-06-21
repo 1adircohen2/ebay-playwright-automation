@@ -7,14 +7,12 @@ from pages.search_page import SearchPage
 from pages.item_page import ItemPage
 from pages.cart_page import CartPage
 
-# פיקסטצ'ר שטוען את נתוני הקלט מקובץ הקונפיגורציה החיצוני
 @pytest.fixture(scope="session")
 def config_data():
     config_path = os.path.join(os.path.dirname(__file__), "../config/config.json")
     with open(config_path, "r") as f:
         return json.load(f)
 
-# פיקסטצ'ר שמנהל פרופיל דפדפן קבוע (שומר לוגין וקוקיז) לעקיפת חסימות
 @pytest.fixture(scope="function")
 def browser_page(config_data):
     with sync_playwright() as p:
@@ -37,8 +35,6 @@ def browser_page(config_data):
         context.close()
 
 
-# טסט ה-E2E הראשי של המערכת
-
 def test_ebay_shopping_cart_e2e(browser_page, config_data):
 
     base_url = config_data["base_url"]
@@ -50,7 +46,6 @@ def test_ebay_shopping_cart_e2e(browser_page, config_data):
     item_page = ItemPage(browser_page)
     cart_page = CartPage(browser_page)
 
-    # שלב 1: ניווט לאתר
     search_page.navigate(base_url)
     search_page.wait_for_load_state()
     
@@ -58,7 +53,6 @@ def test_ebay_shopping_cart_e2e(browser_page, config_data):
     time.sleep(10) 
     # -------------------------------------------------------------------------
 
-    # שלב 2: הפעלת פונקציית החיפוש
     item_urls = search_page.search_items_by_name_under_price(
         query=search_query, 
         max_price=max_price, 
