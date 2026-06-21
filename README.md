@@ -29,7 +29,7 @@ This project is built with a focus on maintainability, scalability, and clean co
 - `tests/`: Contains the main E2E test suite.
 
 ## Prerequisites
-Ensure you have **Python 3.9+** installed.
+- Ensure you have **Python 3.9+** installed.
 
 - Install the required dependencies:
 
