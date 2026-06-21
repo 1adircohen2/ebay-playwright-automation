@@ -1,5 +1,18 @@
 # eBay E2E Automation Project
 
+## Test Flow Visualization
+```mermaid
+graph TD
+    A[Start] --> B[Login/Session Auth]
+    B --> C[Search: 'shoes']
+    C --> D{Items Found?}
+    D -- No --> E[End Test]
+    D -- Yes --> F[Collect URLs]
+    F --> G[Loop: Add Items to Cart]
+    G --> H[Open Cart Page]
+    H --> I[Validate Total <= Budget]
+    I --> J[End Test]
+
 **Developed by:** Adir Cohen
 
 ## Project Overview
@@ -32,15 +45,3 @@ Install the required dependencies:
 pip install -r requirements.txt
 
 
-## Test Flow Visualization
-```mermaid
-graph TD
-    A[Start] --> B[Login/Session Auth]
-    B --> C[Search: 'shoes']
-    C --> D{Items Found?}
-    D -- No --> E[End Test]
-    D -- Yes --> F[Collect URLs]
-    F --> G[Loop: Add Items to Cart]
-    G --> H[Open Cart Page]
-    H --> I[Validate Total <= Budget]
-    I --> J[End Test]
