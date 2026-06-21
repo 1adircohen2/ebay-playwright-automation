@@ -30,3 +30,17 @@ Ensure you have **Python 3.9+** installed.
 Install the required dependencies:
 ```bash
 pip install -r requirements.txt
+
+
+## Test Flow Visualization
+```mermaid
+graph TD
+    A[Start] --> B[Login/Session Auth]
+    B --> C[Search: 'shoes']
+    C --> D{Items Found?}
+    D -- No --> E[End Test]
+    D -- Yes --> F[Collect URLs]
+    F --> G[Loop: Add Items to Cart]
+    G --> H[Open Cart Page]
+    H --> I[Validate Total <= Budget]
+    I --> J[End Test]
