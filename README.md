@@ -33,9 +33,7 @@ This project is built with a focus on maintainability, scalability, and clean co
 Ensure you have **Python 3.9+** installed.
 
 Install the required dependencies:
-bash
-pip install -r requirements.txt
-
+`pip install -r requirements.txt`
 
 ### Test Flow
 ```mermaid
