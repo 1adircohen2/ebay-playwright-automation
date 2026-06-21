@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![Playwright](https://img.shields.io/badge/Playwright-v1.40+-green)
+![Allure](https://img.shields.io/badge/Allure-Report-red)
 # eBay E2E Automation Project
 
 **Developed by:** Adir Cohen
